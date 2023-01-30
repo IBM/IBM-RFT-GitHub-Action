@@ -1,0 +1,26 @@
+{
+  "name": "traditionaluiaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonaHJ/TraditionalUIAction.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SonaHJ/TraditionalUIAction/issues"
+  },
+  "homepage": "https://github.com/SonaHJ/TraditionalUIAction#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^5.0.3",
+    "@vercel/ncc": "^0.34.0",
+    "path": "^0.12.7"
+  }
+}

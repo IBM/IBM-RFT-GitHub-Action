@@ -1,0 +1,25 @@
+name: 'Rational Functional Tester GitHub Action'
+description: 'Execute Rational Functional Tester based functional tests and compound tests from GitHub Actions workflows.'
+branding:
+  icon: 'check-square'
+  color: 'purple'
+inputs:
+  projectDirectory:
+    description: 'The fully qualified path to _prop_task_ui_productName_ project directory.'
+    required: true
+  scriptName:
+    description: 'Name of the script to be executed without the extension. For eg., Script1 or TestFolder.Script1 in case Script1 is in a folder named TestFolder.'
+    required: true
+  iterationCount:
+    description: 'The number of Dataset iterations to be run.'
+    required: false 
+  logFormat:
+    description: 'The format of the script logs, For Example XML, HTML'
+    required: false
+  userArguments:
+    description: 'Additional playback arguments, if any.'
+    required: false
+     
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

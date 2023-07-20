@@ -17,12 +17,9 @@ const main = async () => {
         const productpath = getProductPath();
         const configfile = core.getInput('configFile', { required: false });
         var suite;
-        var script='';
+        var script;
 
-        console.log("Platform is :", process.platform);
-        
         if (configfile) {
-            console.log("Platform is :", process.platform);
             if (process.platform == 'linux' || process.platform == 'darwin') {
                 script = 'cd ' + '"' + productpath + '/cmdline"' + '\n'
                     + 'bash cmdline.sh'
@@ -88,7 +85,7 @@ const main = async () => {
                 script = script.concat(' -aftsuite ' + '"' + suite + '"');
             }
             else {
-                   script = script.concat(' -suite ' + '"' + suite + '"');  
+                script = script.concat(' -suite ' + '"' + suite + '"');
             }
             if (labels) {
                 script = script.concat(' -labels ' + '"' + labels + '"');
@@ -158,10 +155,10 @@ const main = async () => {
         console.log('========================== Starting Command Output ===========================');
         var spawn = require("child_process").spawn, child;
         if (process.platform == 'darwin') {
-        child = spawn("pwsh", [filePath]);
+            child = spawn("pwsh", [filePath]);
         }
-        else{
-        child = spawn("powershell.exe", [filePath]);
+        else {
+            child = spawn("powershell.exe", [filePath]);
         }
         child.stdout.on("data", function (data) {
             console.log(" " + data);
@@ -277,7 +274,7 @@ function getImsharedLoc(productpath) {
         rollupIndex = ibmloc.lastIndexOf("/");
     }
     ibmloc = productpath.substring(0, rollupIndex);
-    // Need to add proper sharedlocation HCL/IBM - hardcoded to HCL
+    // Need to add proper sharedlocation HCL/IBM - hardcoded to IBM
     return ibmloc + path.sep + "IBMIMShared";
 }
 function isEmptyOrSpaces(dataset) {
